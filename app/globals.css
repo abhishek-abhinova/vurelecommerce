@@ -1,0 +1,237 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Sapphire Veil Color Palette */
+  /* #E7F0FA - Light blue (background) */
+  /* #7BA4D0 - Medium blue (secondary) */
+  /* #2E5E99 - Sapphire blue (primary) */
+  /* #0D2440 - Deep navy (dark) */
+
+  --background: #e7f0fa;
+  --foreground: #0d2440;
+  --card: #ffffff;
+  --card-foreground: #0d2440;
+  --popover: #ffffff;
+  --popover-foreground: #0d2440;
+  --primary: #2e5e99;
+  --primary-foreground: #e7f0fa;
+  --secondary: #7ba4d0;
+  --secondary-foreground: #0d2440;
+  --muted: #d4e4f4;
+  --muted-foreground: #4a6d8c;
+  --accent: #7ba4d0;
+  --accent-foreground: #0d2440;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #c5d8eb;
+  --input: #d4e4f4;
+  --ring: #2e5e99;
+
+  /* Custom Sapphire brand colors */
+  --brand-light: #e7f0fa;
+  --brand-medium: #7ba4d0;
+  --brand-primary: #2e5e99;
+  --brand-dark: #0d2440;
+  --brand-navy: #0d2440;
+
+  --chart-1: #2e5e99;
+  --chart-2: #7ba4d0;
+  --chart-3: #0d2440;
+  --chart-4: #5a8bc4;
+  --chart-5: #e7f0fa;
+  --radius: 0.625rem;
+  --sidebar: #e7f0fa;
+  --sidebar-foreground: #0d2440;
+  --sidebar-primary: #2e5e99;
+  --sidebar-primary-foreground: #e7f0fa;
+  --sidebar-accent: #7ba4d0;
+  --sidebar-accent-foreground: #0d2440;
+  --sidebar-border: #c5d8eb;
+  --sidebar-ring: #2e5e99;
+}
+
+.dark {
+  --background: #0d2440;
+  --foreground: #e7f0fa;
+  --card: #142d4c;
+  --card-foreground: #e7f0fa;
+  --popover: #142d4c;
+  --popover-foreground: #e7f0fa;
+  --primary: #7ba4d0;
+  --primary-foreground: #0d2440;
+  --secondary: #1e3a5f;
+  --secondary-foreground: #e7f0fa;
+  --muted: #1e3a5f;
+  --muted-foreground: #9ab8d4;
+  --accent: #2e5e99;
+  --accent-foreground: #e7f0fa;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #1e3a5f;
+  --input: #1e3a5f;
+  --ring: #7ba4d0;
+  --sidebar: #0d2440;
+  --sidebar-foreground: #e7f0fa;
+  --sidebar-primary: #7ba4d0;
+  --sidebar-primary-foreground: #0d2440;
+  --sidebar-accent: #1e3a5f;
+  --sidebar-accent-foreground: #e7f0fa;
+  --sidebar-border: #1e3a5f;
+  --sidebar-ring: #7ba4d0;
+}
+
+@theme inline {
+  --font-sans: "Playfair Display", "Georgia", serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-body: "Inter", "Geist", sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-brand-light: var(--brand-light);
+  --color-brand-medium: var(--brand-medium);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-navy: var(--brand-navy);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar with Sapphire theme */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-medium);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-primary);
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Scroll indicator animation */
+@keyframes scroll-hand {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.animate-scroll-hand {
+  animation: scroll-hand 1.5s ease-in-out infinite;
+}
+
+/* Product carousel */
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide-left {
+  animation: slide-left 25s linear infinite;
+}
+
+/* Fade in animation */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+/* Pulse animation for sale timer */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(46, 94, 153, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px 5px rgba(46, 94, 153, 0.2);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
