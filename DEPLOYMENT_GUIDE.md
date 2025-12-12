@@ -22,9 +22,20 @@ ecommerce-clothing/
 
 ---
 
-## Part 1: Database Setup (PlanetScale - Recommended)
+## Part 1: Database Setup
 
-### 1.1 Create PlanetScale Database
+### Option 1: Hostinger Database (If you have hosting)
+
+1. Login to Hostinger control panel
+2. Go to **Databases** → **MySQL Databases**
+3. Create database `vurel_ecommerce` or use existing
+4. Note connection details:
+   - Host: `mysqlXX.hostinger.com`
+   - Username: Your DB username
+   - Password: Your DB password
+   - Database: Your DB name
+
+### Option 2: PlanetScale (Free Cloud Database)
 
 1. Go to [PlanetScale](https://planetscale.com) and sign up
 2. Create a new database named `vurel-ecommerce`
@@ -33,7 +44,19 @@ ecommerce-clothing/
 
 ### 1.2 Update Backend Environment Variables
 
-Update `backend/.env` with PlanetScale credentials:
+Update `backend/.env` with your database credentials:
+
+**For Hostinger:**
+```env
+# Database Configuration (Hostinger)
+DB_HOST=mysql12.hostinger.com
+DB_USER=your_hostinger_username
+DB_PASSWORD=your_hostinger_password
+DB_NAME=your_database_name
+DB_PORT=3306
+```
+
+**For PlanetScale:**
 ```env
 # Database Configuration (PlanetScale)
 DB_HOST=your-planetscale-host
@@ -111,6 +134,17 @@ gunicorn==21.2.0
 ### 2.4 Set Environment Variables in Render
 
 In Render dashboard, add these environment variables:
+
+**For Hostinger Database:**
+```
+DB_HOST=mysql12.hostinger.com
+DB_USER=your_hostinger_username
+DB_PASSWORD=your_hostinger_password
+DB_NAME=your_database_name
+DB_PORT=3306
+```
+
+**For PlanetScale:**
 ```
 DB_HOST=your-planetscale-host
 DB_USER=your-planetscale-username

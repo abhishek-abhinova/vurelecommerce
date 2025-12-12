@@ -62,7 +62,7 @@ from models import (
 
 # Initialize Flask app
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": ["https://vurel.in", "https://www.vurel.in", "http://localhost:3000"]}})
+CORS(app, resources={r"/*": {"origins": ["https://vurel.in", "https://www.vurel.in", "https://vurelecommerce.vercel.app", "http://localhost:3000"]}})
 
 # Configuration
 JWT_SECRET = os.getenv('JWT_SECRET', 'your-super-secret-jwt-key-change-in-production')

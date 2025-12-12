@@ -10,14 +10,9 @@ const nextConfig = {
         hostname: 'res.cloudinary.com',
       },
     ],
-    unoptimized: true,
   },
-  output: 'export',
-  trailingSlash: true,
-  distDir: 'out',
-  skipTrailingSlashRedirect: true,
   env: {
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || 'https://vurele-backend.onrender.com'
+    NEXT_PUBLIC_API_URL: 'https://vurele-backend.onrender.com'
   }
 }
 
