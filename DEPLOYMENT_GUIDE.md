@@ -231,7 +231,8 @@ Update backend `app.py` CORS configuration:
 CORS(app, resources={
     r"/*": {
         "origins": [
-            "https://your-project.vercel.app",
+            "https://vurel.in",
+            "https://www.vurel.in",
             "http://localhost:3000"
         ]
     }

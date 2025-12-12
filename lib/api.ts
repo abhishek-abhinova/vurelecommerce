@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://vurele-backend.onrender.com"
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://vurele-backend.onrender.com/api"
 
 export interface User {
   id: number
